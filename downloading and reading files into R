@@ -1,0 +1,78 @@
+# This script downloads and reads csv files into R
+
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"
+download.file(fileUrl, destfile = "./data/housing_data.csv")
+hData <- read.table("./data/housing_data.csv", sep="," , header=TRUE)
+head(hData)
+
+# extracting all the measurements of chosen variable
+hData$VAL
+
+# summing up
+sum(!is.na(hData$VAL[hData$VAL==24]))
+
+
+# This script downloads and reads xlsx files into R
+
+library(xlsx)
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx"
+download.file(fileUrl, destfile = "./data/ngas.xlsx", mode = "wb") 
+# Code written to download binary files must use mode = "wb", but the problems incurred by a text transfer will only be seen on Windows
+
+read.xlsx("./data/ngas.xlsx", sheetIndex=1, header=TRUE)
+
+# reading specific rows and values
+
+colIndex <- 7:15 
+rowIndex <- 18:23
+dat <- read.xlsx("./data/ngas.xlsx", sheetIndex=1, header=TRUE, colIndex=colIndex, rowIndex=rowIndex)
+dat
+
+# This script reads xml data into R
+
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
+doc <- xmlTreeParse(fileUrl, useInternal=TRUE)
+rootNode <- xmlRoot(doc)
+xmlName(rootNode)
+[1] "response"
+rootNode[[1]][[1]][[2]]
+<zipcode>21206</zipcode> 
+
+# extracting data from xml using XPath
+
+sum(xpathSApply(rootNode, "//neighborhood", xmlValue)=='Greektown')
+[1] 22
+sum(xpathSApply(rootNode, "//zipcode", xmlValue)==21231)
+[1] 127
+
+# This script reads data from the web into R
+
+fileUrl <- "http://en.wikipedia.org/wiki/French_Revolution"
+doc <- htmlTreeParse(fileUrl, useInternal=TRUE)
+search <- xpathSApply(doc, "//a[@title='Prehistory of France']", xmlValue)
+search
+[1] "Prehistory"   "Palaeolithic" "Mesolithic"   "Neolithic"    "Copper Age"   "Bronze Age"  
+[7] "Iron Age"     "Prehistory"
+search2 <- xpathSApply(doc, "//td[@style='white-space:nowrap;text-align:right;']", xmlValue)
+search2
+ [1] " "              " "              "50 BC – 486 AD" " "              "481–751"       
+ [6] "751–987"        "987–1328"       "1328–1498"      "1498–1515"      "1515–1589"     
+[11] "1589–1792"      "1492–1791"      "1789"           "1791–1792"      "1792–1804"     
+[16] "1792–1795"      "1795–1799"      "1799–1804"      "1804–1814"      "1814–1830"     
+[21] "1830"           "1830–1848"      "1848"           "1848–1852"      "1852–1870"     
+[26] "1870–1940"      "1871"           "1940–1944"      "1944–1946"      "1946–1958"     
+[31] "1958–present"  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
