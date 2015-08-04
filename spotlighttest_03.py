@@ -11,7 +11,7 @@ from xml.dom.minidom import parse, parseString
 
 import io, json
 
-data_to_process = xml.dom.minidom.parse(r'C:\Users\kzaytseva\Documents\Repos\pyckathon\APIS-extraction\sample_data\OEBL_XML-Daten\Aberle_Karl_1818_1892.xml')
+data_to_process = xml.dom.minidom.parse(r'C:\Users\Ksenia\Desktop\OEBL_XML-Daten\Aberle_Karl_1818_1892.xml')
 #variable to process xml file
 
 topic = data_to_process.getElementsByTagName('Lexikonartikel')
@@ -24,14 +24,18 @@ for node in topic:
         print(Value)
 
 annotations = spotlight.annotate('http://spotlight.dbpedia.org/rest/annotate', Value, confidence=0.2, support=20)
+b = json.dumps(annotations, sort_keys=True, indent=4, separators=(', ', ': '))
 
 pi = open('test_haupttext.txt', 'w') #writing output in html file
 
-json.dumps(annotations, sort_keys=True, indent=4, separators=(', ', ': '))
-#print(annotations)
+
+print(b)
+
+pi.write(str(b))
+
+
 
 pi.close()
-print(pi)
 
 #writing output in html file
 

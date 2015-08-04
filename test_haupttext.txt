@@ -1,0 +1,29 @@
+[
+    {
+        "URI": "http://dbpedia.org/resource/Vienna", 
+        "offset": 28, 
+        "percentageOfSecondRank": 0.32447213414929926, 
+        "similarityScore": 0.04746047407388687, 
+        "support": 14992, 
+        "surfaceForm": "Wien", 
+        "types": "DBpedia:Settlement,DBpedia:PopulatedPlace,DBpedia:Place,Schema:Place,Freebase:/location/administrative_division,Freebase:/location,Freebase:/location/citytown,Freebase:/location/location,Freebase:/protected_sites/listed_site,Freebase:/protected_sites,Freebase:/travel/travel_destination,Freebase:/travel,Freebase:/book/book_subject,Freebase:/book,Freebase:/people/place_of_interment,Freebase:/people,Freebase:/location/dated_location,Freebase:/location/statistical_region,Freebase:/government/governmental_jurisdiction,Freebase:/government,Freebase:/language/human_language,Freebase:/language,DBpedia:TopicalConcept"
+    }, 
+    {
+        "URI": "http://dbpedia.org/resource/Doctor_%28title%29", 
+        "offset": 80, 
+        "percentageOfSecondRank": -1.0, 
+        "similarityScore": 0.047829519957304, 
+        "support": 315, 
+        "surfaceForm": "Dr.", 
+        "types": "Freebase:/fictional_universe/character_occupation,Freebase:/fictional_universe,Freebase:/education/academic_post_title,Freebase:/education,Freebase:/book/book_subject,Freebase:/book,Freebase:/business/job_title,Freebase:/business,Freebase:/people/profession,Freebase:/people"
+    }, 
+    {
+        "URI": "http://dbpedia.org/resource/Salzburg", 
+        "offset": 187, 
+        "percentageOfSecondRank": 0.2065538442326736, 
+        "similarityScore": 0.051549460738897324, 
+        "support": 1881, 
+        "surfaceForm": "Salzburg", 
+        "types": "DBpedia:Settlement,DBpedia:PopulatedPlace,DBpedia:Place,Schema:Place,Freebase:/protected_sites/listed_site,Freebase:/protected_sites,Freebase:/location/dated_location,Freebase:/location,Freebase:/olympics/olympic_bidding_city,Freebase:/olympics,Freebase:/location/statistical_region,Freebase:/location/citytown,Freebase:/travel/travel_destination,Freebase:/travel,Freebase:/location/location,DBpedia:TopicalConcept"
+    }
+]
