@@ -1,4 +1,5 @@
 __author__ = 'kzaytseva'
+#this code iterates over xml files in a given directory, extracts text from haupttext tag and annotates it with dbpedia spotlight
 
 import os, re
 
