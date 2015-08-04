@@ -25,14 +25,15 @@ for node in topic:
 
 annotations = spotlight.annotate('http://spotlight.dbpedia.org/rest/annotate', Value, confidence=0.2, support=20)
 
+pi = open('test_haupttext.txt', 'w') #writing output in html file
 
-pi = json.dumps(annotations, sort_keys=True, indent=4, separators=(', ', ': '))
+json.dumps(annotations, sort_keys=True, indent=4, separators=(', ', ': '))
 #print(annotations)
 
-
+pi.close()
 print(pi)
 
-pi = open('test_haupttext.html', 'w') #writing output in html file
+#writing output in html file
 
 #out_string = str(annotations) #convering annotations value to string
 
@@ -41,8 +42,6 @@ pi = open('test_haupttext.html', 'w') #writing output in html file
 #out = json.dump(annotations, myfile, sort_keys = True, indent = 4, )
 
 #myfile.write(out + '\n')
-
-pi.close()
 
 
 #for item in annotations:
